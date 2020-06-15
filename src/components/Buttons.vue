@@ -1,8 +1,8 @@
 <template>
-    <b-button v-on:click="$emit('regenerate')">
+    <button class="btn btn-dark btn-lg btn-block" v-on:click="$emit('regenerate')">
         <font-awesome-icon :icon="['fad', 'sync']"/>
         Regenerate
-    </b-button>
+    </button>
 </template>
 
 <script>
