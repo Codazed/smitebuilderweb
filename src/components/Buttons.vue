@@ -1,5 +1,5 @@
 <template>
-    <b-button v-on:click="oof()">
+    <b-button v-on:click="$emit('regenerate')">
         <font-awesome-icon :icon="['fad', 'sync']"/>
         Regenerate
     </b-button>
