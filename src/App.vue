@@ -5,8 +5,8 @@
             <ul>
                 <li v-for="item in items" :key="item.name">{{ item.name }}</li>
             </ul>
+            <buttons v-on:regenerate="oof"></buttons>
         </b-container>
-        <buttons v-on:regenerate="oof"></buttons>
     </div>
 </template>
 
