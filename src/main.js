@@ -1,21 +1,19 @@
 import Vue from 'vue';
 import App from './App.vue';
+import { BootstrapVue } from 'bootstrap-vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+Vue.component('buttons', Buttons);
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Buttons from "./components/Buttons";
+
+Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false
 
-let app = new Vue({
-    data: {
-        god: '',
-        items: []
-    },
+new Vue({
     render: h => h(App)
 }).$mount('#app');
-
-import SmiteTeamGenerator from 'smite-builder';
-let stg = new SmiteTeamGenerator();
-stg.getLists(() => {
-    console.log(stg.lists);
-    let player = stg.generateTeam({size: 1}).getPlayer(0);
-    app.god = player.god.name;
-    app.items = player.build.items;
-});
