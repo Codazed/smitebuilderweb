@@ -1,10 +1,12 @@
 <template>
     <div class="header header-dark">
         <h1>Smite Builder</h1>
+        <p class="text-muted">Alpha-18</p>
     </div>
 </template>
 
 <script>
+
     export default {
         name: "Header",
         props: ['theme']
