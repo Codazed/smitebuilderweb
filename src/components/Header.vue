@@ -1,7 +1,7 @@
 <template>
     <div class="header header-dark">
         <h1>Smite Builder</h1>
-        <p class="text-muted">Alpha-18</p>
+        <p class="text-muted">Open Alpha</p>
     </div>
 </template>
 

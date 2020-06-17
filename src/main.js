@@ -6,13 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 Vue.component('ToggleButton', ToggleButton);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-Vue.component('buttons', Buttons);
+Vue.component('controls', Controls);
+Vue.component('player', Player);
 Vue.component('page-header', Header);
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import Buttons from "./components/Buttons";
+import Controls from "./components/Controls";
 import Header from "./components/Header";
+import Player from "./components/Player";
 
 Vue.use(BootstrapVue);
 

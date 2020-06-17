@@ -10,13 +10,10 @@
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <h1>{{ god }}</h1>
-                    <ul>
-                        <li v-for="item in items" :key="item.name">{{ item.name }}</li>
-                    </ul>
+                    <player v-for="player in team" :key="player.god.name" :god="player.god.name" :items="player.build.items"></player>
                 </div>
                 <div class="col-md-4">
-                    <buttons v-on:regenerate="oof"></buttons>
+                    <controls v-on:regenerate="oof" v-on:teamSizeChange="changeTeamSize"></controls>
                 </div>
             </div>
         </b-container>
@@ -35,15 +32,16 @@
         name: 'App',
         data: function () {
             return {
-                god: '',
-                items: []
+                teamSize: 1,
+                team: []
             }
         },
         methods: {
             oof: function () {
-                let player = stg.generateTeam({size: 1}).getPlayer(0);
-                this.god = player.god.name;
-                this.items = player.build.items;
+                this.team = stg.generateTeam({size: this.teamSize}).team;
+            },
+            changeTeamSize: function(newSize) {
+                this.teamSize = newSize + 1;
             }
         },
         mounted() {
