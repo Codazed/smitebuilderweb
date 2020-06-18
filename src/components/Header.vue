@@ -2,7 +2,13 @@
     <div class="header header-dark">
         <h1>Smite Builder</h1>
         <p class="text-muted">
-            Open Alpha<br><a href="https://gitlab.com/Codazed/smite-builder">smite-builder</a> package version {{ version }}
+            Open Alpha<br><a href="https://gitlab.com/Codazed/smite-builder">smite-builder</a> package version {{ version }}<br>
+            Made with
+            <font-awesome-icon :icon="['fad', 'coffee']"/>
+            and
+            <font-awesome-icon :icon="['fad', 'heart']"/>
+            by
+            <a href="https://codazed.dev">Codazed</a>
         </p>
     </div>
 </template>
@@ -21,6 +27,7 @@
         margin-bottom: 30px;
         text-align: center;
     }
+
     .header-dark {
         background-color: #222;
         color: #fff;

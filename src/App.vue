@@ -22,9 +22,9 @@
 
 <script>
     import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faSync} from '@fortawesome/pro-duotone-svg-icons';
+    import {faSync, faCoffee, faHeart} from '@fortawesome/pro-duotone-svg-icons';
 
-    library.add(faSync);
+    library.add(faSync, faCoffee, faHeart);
     import SmiteBuilder from 'smite-builder';
 
     let builder = new SmiteBuilder();
