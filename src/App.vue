@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <page-header></page-header>
+        <page-header :version="this.builderVersion"></page-header>
         <b-container fluid="xl">
             <div class="alert alert-warning" role="alert">
                 Welcome to the Smite Builder alpha web app! Keep in mind this is an <strong>Alpha</strong>.
@@ -9,11 +9,11 @@
                 in this alpha. That being said, enjoy trying this alpha!
             </div>
             <div class="row">
-                <div class="col-md-8">
-                    <player v-for="player in team" :key="player.god.name" :god="player.god.name" :items="player.build.items"></player>
+                <div class="col-md-4 order-md-last">
+                    <controls v-on:generate="generate"></controls>
                 </div>
-                <div class="col-md-4">
-                    <controls v-on:regenerate="oof" v-on:teamSizeChange="changeTeamSize"></controls>
+                <div class="col-md-8 order-md-first text-md-left text-center">
+                    <player class="player" v-for="(player, index) in team" :key="player.god.name" :god="player.god.name" :items="player.build.items" :num="index"></player>
                 </div>
             </div>
         </b-container>
@@ -25,28 +25,34 @@
     import {faSync} from '@fortawesome/pro-duotone-svg-icons';
 
     library.add(faSync);
-    import SmiteTeamGenerator from 'smite-builder';
+    import SmiteBuilder from 'smite-builder';
 
-    let stg = new SmiteTeamGenerator();
+    let builder = new SmiteBuilder();
     export default {
         name: 'App',
         data: function () {
             return {
-                teamSize: 1,
-                team: []
+                defaultOpts: {
+                    forceBalanced: false,
+                    forceBoots: false,
+                    warriorsOffensive: false,
+                    buildType: 0,
+                    size: 1
+                },
+                team: [],
+                builderVersion: ''
             }
         },
         methods: {
-            oof: function () {
-                this.team = stg.generateTeam({size: this.teamSize}).team;
-            },
-            changeTeamSize: function(newSize) {
-                this.teamSize = newSize + 1;
+            generate: function (options) {
+                builder.warriorsOffensive = options.warriorsOffensive;
+                this.team = builder.generateTeam(options);
             }
         },
         mounted() {
-            stg.getLists(() => {
-                this.oof();
+            this.builderVersion = builder.version;
+            builder.getLists(() => {
+                this.generate(this.defaultOpts);
             });
         }
     }
@@ -58,5 +64,9 @@
         font-family: 'Fira Sans', sans-serif !important;
         background-color: #000 !important;
         color: #fff !important;
+    }
+
+    .player {
+        margin-bottom: 15px;
     }
 </style>

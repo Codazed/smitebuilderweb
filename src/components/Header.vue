@@ -1,7 +1,9 @@
 <template>
     <div class="header header-dark">
         <h1>Smite Builder</h1>
-        <p class="text-muted">Open Alpha</p>
+        <p class="text-muted">
+            Open Alpha<br><a href="https://gitlab.com/Codazed/smite-builder">smite-builder</a> package version {{ version }}
+        </p>
     </div>
 </template>
 
@@ -9,7 +11,7 @@
 
     export default {
         name: "Header",
-        props: ['theme']
+        props: ['theme', 'version']
     }
 </script>
 
