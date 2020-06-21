@@ -7168,10 +7168,10 @@ slice-ansi@^2.1.0:
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
-smite-builder@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/smite-builder/-/smite-builder-1.0.4.tgz#9f0d095ee6c670ad990abda261d845bb845ac2b3"
-  integrity sha512-7RSNm/liRZJh34O1Q5PKjpzIBpGcRKJr309WP/mm7W6G2iW6ACyR2SJ/m1W4/lUWRiXcenshisXUWoSqaWNR/g==
+smite-builder@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/smite-builder/-/smite-builder-1.1.0.tgz#a1c46ae4ea23cbffddbeb10fc9fe1c962eada689"
+  integrity sha512-zWUzg1aYnoAH49kGSLhmUNd8WU5mZxZY912FUhxYErAV8yEHf7poxAqrIa+J50OxP2Y3AYP39dIihg3gOlz+zQ==
   dependencies:
     axios "^0.19.2"
     boolean "^3.0.1"
