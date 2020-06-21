@@ -2,12 +2,12 @@
     <div id="app">
         <page-header :version="this.builderVersion"></page-header>
         <b-container fluid="xl">
-            <div class="alert alert-warning" role="alert">
+            <b-alert variant="warning" dismissible show>
                 Welcome to the Smite Builder alpha web app! Keep in mind this is an <strong>Alpha</strong>.
                 Some things will work and other things will not. Please keep this in mind as you use this app
                 and please don't yell at me when things are not working, because chances are I am aware of issues
                 in this alpha. That being said, enjoy trying this alpha!
-            </div>
+            </b-alert>
             <transition name="slide" mode="out-in">
                 <div v-if="showSavedBuilds && savedBuilds.length > 0" key="saved">
                     <div class="row">
