@@ -10,22 +10,26 @@
         </b-button-group>
         <hr class="bg-light">
         <h4>Build Type</h4>
-        <b-form-select v-model="options.buildType" :options="buildTypes"></b-form-select>
+        <b-form-select class="custom-select bg-dark text-light" v-model="options.buildType" :options="buildTypes"></b-form-select>
         <p class="text-md-left">{{ buildTypes[options.buildType].description }}</p>
         <hr class="bg-light">
         <b-form-checkbox class="text-left mb-2" v-model="options.warriorsOffensive" name="warriors-offensive" switch>
-            <strong>Are warriors offensive? <span v-if="options.warriorsOffensive">Yes</span><span v-else>No</span>.</strong><br><span v-if="options.warriorsOffensive">Warriors marked as offensive gods.</span><span v-else>Warriors marked as defensive gods.</span>
+            <strong>Are warriors offensive? <span v-if="options.warriorsOffensive">Yes</span><span v-else>No</span>.</strong><br>Warriors marked as <span v-if="options.warriorsOffensive">offensive</span><span v-else>defensive</span> gods.
         </b-form-checkbox>
         <b-form-checkbox class="text-left mb-2" v-model="options.forceBalanced" name="balanced-team" switch>
-            <strong>Force balanced team? <span v-if="options.forceBalanced">Yes</span><span v-else>No</span>.</strong><br><span v-if="options.forceBalanced">Positions won't be recycled.</span><span v-else>Positions may be recycled.</span>
+            <strong>Force balanced team? <span v-if="options.forceBalanced">Yes</span><span v-else>No</span>.</strong><br>Positions <span v-if="options.forceBalanced">won't</span><span v-else>may</span> be recycled.
         </b-form-checkbox>
         <b-form-checkbox class="text-left mb-2" v-model="options.forceBoots" name="balanced-team" switch>
-            <strong>Force building boots? <span v-if="options.forceBoots">Yes</span><span v-else>No</span>.</strong><br><span v-if="options.forceBoots">Boots will always be picked.</span><span v-else>Boots won't always be picked.</span>
+            <strong>Force building boots? <span v-if="options.forceBoots">Yes</span><span v-else>No</span>.</strong><br>Boots <span v-if="options.forceBoots">will</span><span v-else>won't</span> always be picked.
         </b-form-checkbox>
         <hr class="bg-light">
         <b-button block variant="dark" v-on:click="$emit('generate', options)">
             <font-awesome-icon :icon="['fad', 'sync']"/>
             Generate
+        </b-button>
+        <b-button block variant="dark" v-b-tooltip.hover.right :title="'You have ' + (savedBuildsNum > 0 ? savedBuildsNum : 'no') + ' saved builds.'" v-on:click="$emit('showSavedBuilds')" :disabled="savedBuildsNum <= 0">
+            <font-awesome-icon :icon="['fad', 'save']" />
+            Saved builds
         </b-button>
     </div>
 </template>
@@ -33,6 +37,7 @@
 <script>
     export default {
         name: "Controls",
+        props: ['savedBuildsNum'],
         data: function () {
             return {
                 options: {

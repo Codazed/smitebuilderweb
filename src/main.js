@@ -9,12 +9,14 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('controls', Controls);
 Vue.component('player', Player);
 Vue.component('page-header', Header);
+Vue.component('saved-build', SavedBuild);
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Controls from "./components/Controls";
 import Header from "./components/Header";
 import Player from "./components/Player";
+import SavedBuild from "./components/SavedBuild";
 
 Vue.use(BootstrapVue);
 
