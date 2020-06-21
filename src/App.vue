@@ -49,10 +49,10 @@
                 this.team = builder.generateTeam(options);
             }
         },
-        mounted() {
+        async mounted() {
             this.builderVersion = builder.version;
-            builder.getLists(() => {
-                this.generate(this.defaultOpts);
+            await builder.getLists();
+            this.generate(this.defaultOpts);
             });
         }
     }
