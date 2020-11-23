@@ -1,0 +1,12 @@
+pages:
+  image: node:latest
+  stage: deploy
+  script:
+    - yarn
+    - yarn build
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - dist
+  only:
+    - master
