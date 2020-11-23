@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-3 text-left">
                             <b-button variant="dark" v-on:click="showSavedBuilds = false">
-                                <font-awesome-icon :icon="['fad', 'arrow-alt-square-left']" />
+                                <font-awesome-icon :icon="['fas', 'arrow-alt-square-left']" />
                                 Back
                             </b-button>
                         </div>
@@ -40,9 +40,9 @@
 
 <script>
     import {library} from '@fortawesome/fontawesome-svg-core';
-    import {faSync, faCoffee, faHeart, faSave, faRedoAlt, faTrashAlt, faArrowAltSquareLeft} from '@fortawesome/pro-duotone-svg-icons';
+    import {faSync, faCoffee, faHeart, faSave, faRedoAlt, faTrashAlt, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
-    library.add(faSync, faCoffee, faHeart, faSave, faRedoAlt, faTrashAlt, faArrowAltSquareLeft);
+    library.add(faSync, faCoffee, faHeart, faSave, faRedoAlt, faTrashAlt, faArrowLeft);
     import SmiteBuilder from 'smite-builder';
 
     let builder = new SmiteBuilder();

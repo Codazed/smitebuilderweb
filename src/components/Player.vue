@@ -5,8 +5,8 @@
                 <div class="row">
                     <div class="col-9 text-left" v-b-toggle="'accordion-' + num"><span class="align-text-top">{{god}}</span></div>
                     <div class="col-3 text-right">
-                        <b-button v-b-modal="'saveBuildModal-' + num" class="mx-1" variant="dark" size="sm" v-b-tooltip.hover title="Save build"><font-awesome-icon :icon="['fad', 'save']"/></b-button>
-                        <b-button disabled variant="dark" size="sm" v-b-tooltip.hover title="Reroll" v-on:click="$emit('rerollPlayer', num)"><font-awesome-icon :icon="['fad', 'redo-alt']"/></b-button>
+                        <b-button v-b-modal="'saveBuildModal-' + num" class="mx-1" variant="dark" size="sm" v-b-tooltip.hover title="Save build"><font-awesome-icon :icon="['fas', 'save']"/></b-button>
+                        <b-button disabled variant="dark" size="sm" v-b-tooltip.hover title="Reroll" v-on:click="$emit('rerollPlayer', num)"><font-awesome-icon :icon="['fas', 'redo-alt']"/></b-button>
                     </div>
                 </div>
             </b-card-header>

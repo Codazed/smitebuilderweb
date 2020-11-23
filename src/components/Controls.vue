@@ -24,11 +24,11 @@
         </b-form-checkbox>
         <hr class="bg-light">
         <b-button block variant="dark" v-on:click="$emit('generate', options)">
-            <font-awesome-icon :icon="['fad', 'sync']"/>
+            <font-awesome-icon :icon="['fas', 'sync']"/>
             Generate
         </b-button>
         <b-button block variant="dark" v-b-tooltip.hover.right :title="'You have ' + (savedBuildsNum > 0 ? savedBuildsNum : 'no') + ' saved builds.'" v-on:click="$emit('showSavedBuilds')" :disabled="savedBuildsNum <= 0">
-            <font-awesome-icon :icon="['fad', 'save']" />
+            <font-awesome-icon :icon="['fas', 'save']" />
             Saved builds
         </b-button>
     </div>

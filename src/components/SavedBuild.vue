@@ -13,7 +13,7 @@
                 <div class="col-2 text-right">
                     <b-button variant="dark" size="sm" v-b-modal="'confirmDelete-' + index" v-b-tooltip.hover
                               title="Delete build">
-                        <font-awesome-icon :icon="['fad', 'trash-alt']"/>
+                        <font-awesome-icon :icon="['fas', 'trash-alt']"/>
                     </b-button>
                     <b-modal :id="'confirmDelete-' + index"
                              size="sm"

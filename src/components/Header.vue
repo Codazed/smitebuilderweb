@@ -4,9 +4,9 @@
         <p class="text-muted">
             Open Alpha<br><a href="https://gitlab.com/Codazed/smite-builder">smite-builder</a> package version {{ version }}<br>
             Made with
-            <font-awesome-icon :icon="['fad', 'coffee']"/>
+            <font-awesome-icon :icon="['fas', 'coffee']"/>
             and
-            <font-awesome-icon :icon="['fad', 'heart']"/>
+            <font-awesome-icon :icon="['fas', 'heart']"/>
             by
             <a href="https://codazed.dev">Codazed</a>
         </p>
