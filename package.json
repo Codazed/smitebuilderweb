@@ -1,6 +1,6 @@
 {
   "name": "smitebuilderweb",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -13,7 +13,7 @@
     "@fortawesome/vue-fontawesome": "2",
     "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
-    "smite-builder": "^1.2.0",
+    "smite-builder": "^2.2.0",
     "vue": "^2.6.11",
     "vue-js-toggle-button": "^1.3.3"
   },

@@ -1,8 +1,11 @@
 <template>
     <div class="header header-dark">
-        <h1>Smite Builder</h1>
+        <h1>
+            Smite Builder
+            <b-badge variant="primary">BETA</b-badge>
+        </h1>
         <p class="text-muted">
-            Open Alpha<br><a href="https://gitlab.com/Codazed/smite-builder">smite-builder</a> package version {{ version }}<br>
+            <a href="https://gitlab.com/Codazed/smite-builder">smite-builder</a> package version {{ version }}<br>
             Made with
             <font-awesome-icon :icon="['fas', 'coffee']"/>
             and
