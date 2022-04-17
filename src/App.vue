@@ -2,12 +2,6 @@
     <div id="app">
         <page-header :version="this.builderVersion"></page-header>
         <b-container fluid="xl">
-            <b-alert variant="warning" dismissible show>
-                Welcome to the Smite Builder alpha web app! Keep in mind this is an <strong>Alpha</strong>.
-                Some things will work and other things will not. Please keep this in mind as you use this app
-                and please don't yell at me when things are not working, because chances are I am aware of issues
-                in this alpha. That being said, enjoy trying this alpha!
-            </b-alert>
             <transition name="slide" mode="out-in">
                 <div v-if="showSavedBuilds && savedBuilds.length > 0" key="saved">
                     <div class="row">
@@ -45,7 +39,6 @@
     library.add(faSync, faCoffee, faHeart, faSave, faRedoAlt, faTrashAlt, faArrowLeft);
     import SmiteBuilder from 'smite-builder';
 
-    let builder = new SmiteBuilder();
     export default {
         name: 'App',
         data: function () {
@@ -65,8 +58,8 @@
         },
         methods: {
             generate: function (options) {
-                builder.warriorsOffensive = options.warriorsOffensive;
-                this.team = builder.generateTeam(options);
+                this.builder.warriorsOffensive = options.warriorsOffensive;
+                this.team = this.builder.generateTeam(options);
             },
             reroll: function (index) {
                 this.team.rerollPlayer(index);
@@ -84,8 +77,8 @@
             }
         },
         async mounted() {
-            this.builderVersion = builder.version;
-            await builder.getLists();
+            this.builder = new SmiteBuilder();
+            this.builderVersion = this.builder.version;
             this.generate(this.defaultOpts);
             if (localStorage.savedBuilds) {
                 this.savedBuilds = JSON.parse(localStorage.savedBuilds);
